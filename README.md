@@ -60,12 +60,17 @@ A la hora de crear un componente se habla directamente de funciones
 
 En React es posible hacer esto:
 
-function Greeting (){
-    return < div >
-        < h1 >Este es un componente< /h1 >
-        < p >este es texto de relleno para el componente< /p >
-    < /div >
-}
+>function Greeting (){
+
+>    return < div >
+
+>    < h1 >Este es un componente< /h1 >
+
+>    < p >este es texto de relleno para el componente< /p >
+
+>    < /div >
+
+>}
 
 y entregar datos en etiquetas html puras sin comillas como normalmente nos lo 
 pediría javascript ya que utilizamos una sintaxis especial llamda JSX que es una
@@ -75,9 +80,9 @@ de javasript se retornen porciones de html y luego será convertido en Javascrip
 ## Condicionales ternearias
 variable ? valor_si_true : valor_si_false. es muy utilizado en react, por ejemplo:
 
->    const name = "Gabo"
+>const name = "Gabo"
 
->   const married = true
+>const married = true
 
 >return < h1 > {married ? name + " está casado" : name + " no está casado 😎"}< /h1 >
 
@@ -88,24 +93,34 @@ para vscode ya que mezcla caracteres y lo interpresta como un emoticon
 Para poder mostrar un objeto debemos crear una string que sea ese objeto ya que 
 solo pasando el objeto no funcionará, también sirve para comunicarse con el backend
 
-function Greeting (){
-    const user = {
-        firstName: "ryan",
-        lastName: "godinez",
-    }
-    return < h1 >{JSON.stringify(user)}< /h1 >
-}
+>function Greeting (){
+
+>    const user = {
+
+>    firstName: "ryan",
+
+>    lastName: "godinez",
+
+>    }
+
+>    return < h1 >{JSON.stringify(user)}< /h1 >
+
+>}
 
 > JSON.strinfigy(x) convierte las cosas en string
 > JSON.parse(x) regresa las cosas a su estado original
 
 Los elementos al ser ya strings puedo llamarlos y representarlos dentro de la interfaz
 
-return < div>
-    < h1>{user.firstName}</ h1>
-    < h3>{user.lastName}</ h3>
-    < h4>Está casado? {married.toString()}</ h4>
-</ div>
+>return < div>
+
+>    < h1>{user.firstName}</ h1>
+
+>    < h3>{user.lastName}</ h3>
+
+>    < h4>Está casado? {married.toString()}</ h4>
+
+></ div>
 
 Para mostar un booleano puedo usar el método .toString()
 
@@ -119,12 +134,17 @@ Es un contendor vacío y no se converte en nada al final
 ## Exportando e Imoprtando datos
 la función en otro archivo debería verse así : 
 
-export function Greeting (){
-    function add(x,y){
-        return x+y
-    }
-    return < h1 >{add(1,2)}< /h1 >
-}
+>export function Greeting (){
+
+>    function add(x,y){
+
+>    return x+y
+
+>    }
+
+>    return < h1 >{add(1,2)}< /h1 >
+
+>}
 
 Notamos el export al inicio
 y el archivo index.js tendrá un import así:
@@ -138,17 +158,25 @@ poder mostrarlo desde el index.js. Para importar varios:
 
 Para no exportar de manera indivisual podemos hacer lo siguiente
 
-function Product(){
-    return < div >
-        Producto
-    </ div >
-}
+>function Product(){
 
-export function Navbar(){
-    return < nav>
-        navigation
-    </ nav>
-}
+>    return < div >
+
+>    Producto
+
+>    </ div >
+
+>}
+
+>export function Navbar(){
+
+>    return < nav>
+
+>    navigation
+
+>    </ nav>
+
+>}
 
 >export default Product
 
@@ -209,3 +237,6 @@ para obtener directamente el valor que quiero.
 
 >}
 
+Para pasar más de un parámetros:
+
+> 
