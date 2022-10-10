@@ -1,4 +1,4 @@
-Aprendiendo React
+# Aprendiendo React
 
 La carpeta más importante será la de src donde estarán todos los archivos de código
 que estaremos utilizando
@@ -20,8 +20,8 @@ en una sola.
 El package.json nos sirve para determinar las bibliotecas y dependencias que usaremos
 en nuestra aplicación REACT.
 
-npm start lanza el proyecto
-npm run build crea una versión de producción del proyecto
+>npm start lanza el proyecto
+>npm run build crea una versión de producción del proyecto
 
 En los archivos hace falta una carpeta, esta es de las más importantes y es la capeta
 build, cuando usemos react todo será código de desarollo pero al terminar de desarrollar
@@ -39,8 +39,32 @@ los paquetes.
 
 ---- borramos todo lo que se encuentra en src ----
 
+## Iniciar app
 Creamos el archivo Js que es el archivo principal que toma react
 src/index.js
+React al hacer un cambio y guardar refleja de un solo los cambios en el server
+
+## Componentes
+En REACT todo es un componente, la navbar, post, sidebar, botones todo pueder ser 
+roto entre componente, son porciones de una interfaz más grande, los componentes
+son reutilizables (como los de vue y sus templates y componentes) Todo empieza
+apartir de un componente inicial que sería el root, componente que creamos en la 
+sección anterior
+
+A la hora de crear un componente se habla directamente de funciones
+
+En React es posible hacer esto:
+function Greeting (){
+    return <div>
+        <h1>Este es un componente</h1>
+        <p>este es texto de relleno para el componente</p>
+    </div>
+}
+
+y entregar datos en etiquetas html puras sin comillas como normalmente nos lo 
+pediría javascript ya que utilizamos una sintaxis especial llamda JSX que es una
+combinación entre javascript y html, mas o menos. Permite que dentro de un archivo
+de javasript se retornen porciones de html y luego será convertido en Javascript puro
 
 
 # Getting Started with Create React App

@@ -26,5 +26,47 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 /*
     para mostrar cosas dentro utilizado la función render y lo que 
     quiere son children que son elementos html
+
+    usualment no se hace esto: 
+    root.render(<h1>Hola mundo se fresca solo!</h1>)
+    pero es bueno para hacer la prueba de que la biblioteca esté jalando bien
 */ 
-root.render(<h1>Hello World!</h1>)
+
+/*
+    Los componentes son funciones que siempre retornan una interfaz
+    la interfaz retornada pueden ser etiquetas de botón, h1, div, etc.
+    importante notar que esto no se puede hacer normalmente en js,
+    el retornar html
+*/
+
+/*
+    Creamos el primer componente
+    Es una función que retorna html y también debe tener un elemento padre
+    en esta caso es el div
+*/
+function Greeting (){
+    return <div>
+        <h1>Este es un componente</h1>
+        <p>este es texto de relleno para el componente</p>
+    </div>
+}
+
+/*
+    root.render(
+        <div>
+            ---
+        </div>
+    )
+    Se escribe con un div porque siempre debe de haber un elemento que
+    encapsule al resto, aplica también para el return de los componentes
+*/
+root.render(
+    <div>
+        {/* Se puede utilizar etiquetas normales o self closing  */}
+        <Greeting></Greeting>
+        <Greeting></Greeting>
+        <Greeting/>
+        <Greeting/>
+    </div>
+
+)
