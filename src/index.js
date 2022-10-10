@@ -43,30 +43,43 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
     Creamos el primer componente
     Es una función que retorna html y también debe tener un elemento padre
     en esta caso es el div
+
+    function Greeting (){
+        return <div>
+            <h1>Este es un componente</h1>
+            <p>este es texto de relleno para el componente</p>
+        </div>
+    }
+
+    para meter datos almacenados en l código de js a la interfaz utilizamos {}
+    dentro de greeting
+    ...
+    const name = "Gabo"
+    return <h1>{name}</h1>
+    ...
+
 */
+
 function Greeting (){
-    return <div>
-        <h1>Este es un componente</h1>
-        <p>este es texto de relleno para el componente</p>
-    </div>
+    const name = "Gabo"
+    const married = false
+    if (married){
+        return <h1>{name} si está casado :/</h1>
+    }else{
+        return <h1>{name} no está casado</h1>
+    }
 }
 
 /*
     root.render(
         <div>
-            ---
+            <Greeting></Greeting>
+            <Greeting></Greeting>
+            <Greeting/>
+            <Greeting/>
         </div>
     )
     Se escribe con un div porque siempre debe de haber un elemento que
     encapsule al resto, aplica también para el return de los componentes
 */
-root.render(
-    <div>
-        {/* Se puede utilizar etiquetas normales o self closing  */}
-        <Greeting></Greeting>
-        <Greeting></Greeting>
-        <Greeting/>
-        <Greeting/>
-    </div>
-
-)
+root.render(<Greeting/>)
