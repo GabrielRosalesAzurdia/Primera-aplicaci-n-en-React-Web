@@ -1,3 +1,48 @@
+Aprendiendo React
+
+La carpeta más importante será la de src donde estarán todos los archivos de código
+que estaremos utilizando
+
+El objetivo con REACT es ya no manejar tanto HTML sino que Javascript se encargue
+de generar las interfaces de HTML
+
+Dentro del index.html de la carpeta public veremos la estructura básica y por 
+defecto de un proyecto de REACT, lo que nos puede llegar a interesar es 
+que los meta nos sirve para el responsive, y el div con id "root" que es donde
+se va a colocar la interfaz que vallamos a crear. Al final todo el código de JS
+será cargado en el HTML index de la carpeta public.
+
+Dentro de la carpeta src irá código de javascript, css y de html. en el archivo
+index.js se hace más que todo importaciones. La idea con REACT es colocar el
+codigo de css, html y js de manera conjunta y al final todo lo vamos a acoplar 
+en una sola.
+
+El package.json nos sirve para determinar las bibliotecas y dependencias que usaremos
+en nuestra aplicación REACT.
+
+npm start lanza el proyecto
+npm run build crea una versión de producción del proyecto
+
+En los archivos hace falta una carpeta, esta es de las más importantes y es la capeta
+build, cuando usemos react todo será código de desarollo pero al terminar de desarrollar
+crearemos una nueva carpeta que será la que se va a despegar es decir al correr el 
+comando npm run build, todo lo que esté en la carpeta build es la app para producción
+No se supe todo el proyecto solo la carpeta build.
+Ya está optimizado y se sube a un hosting compartido o a un servicio en la nube.
+
+Carpeta node_modules es solo datos para que react pueda funcionar pero que no
+nos interesa saber qué son ni qué tienen es funcionamiento interno y es mejor 
+si no lo tacamos.
+
+El package-lock.json tampoco se modifica, lo utiliza node para seguimiento de 
+los paquetes.
+
+---- borramos todo lo que se encuentra en src ----
+
+Creamos el archivo Js que es el archivo principal que toma react
+src/index.js
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
