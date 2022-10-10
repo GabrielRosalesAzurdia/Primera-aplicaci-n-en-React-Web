@@ -7,9 +7,9 @@
     trabajando con su versión web, es decir el DOM
 */
 import React from "react"
-//  esta es la importación para la web
 import ReactDOM from "react-dom/client"
-
+import {Greeting, UserCar} from "./Greeting"
+import Product, {Navbar} from "./Product"
 /* 
     ya que react monta nuestra aplicación en la etiqueta con id root 
     en el index html de la carpeta public debemos seleccionar este elemento
@@ -22,24 +22,19 @@ import ReactDOM from "react-dom/client"
     Ahora tenémos una aplicación de react inicializada
 */
 const root = ReactDOM.createRoot(document.getElementById("root"))
-
 /*
     para mostrar cosas dentro utilizado la función render y lo que 
     quiere son children que son elementos html
 
-    usualment no se hace esto: 
+    usualmente no se hace esto: 
     root.render(<h1>Hola mundo se fresca solo!</h1>)
     pero es bueno para hacer la prueba de que la biblioteca esté jalando bien
-*/ 
 
-/*
     Los componentes son funciones que siempre retornan una interfaz
     la interfaz retornada pueden ser etiquetas de botón, h1, div, etc.
     importante notar que esto no se puede hacer normalmente en js,
     el retornar html
-*/
 
-/*
     Creamos el primer componente
     Es una función que retorna html y también debe tener un elemento padre
     en esta caso es el div
@@ -53,24 +48,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 
     para meter datos almacenados en l código de js a la interfaz utilizamos {}
     dentro de greeting
+
     ...
     const name = "Gabo"
     return <h1>{name}</h1>
     ...
 
-*/
-
-function Greeting (){
-    const name = "Gabo"
-    const married = false
-    if (married){
-        return <h1>{name} si está casado :/</h1>
-    }else{
-        return <h1>{name} no está casado</h1>
-    }
-}
-
-/*
     root.render(
         <div>
             <Greeting></Greeting>
@@ -82,4 +65,12 @@ function Greeting (){
     Se escribe con un div porque siempre debe de haber un elemento que
     encapsule al resto, aplica también para el return de los componentes
 */
-root.render(<Greeting/>)
+
+root.render(<>
+    <Greeting/>
+    <Greeting/>
+    <Greeting/>
+    <UserCar></UserCar>
+    <Product></Product>
+    <Navbar></Navbar>
+</>)

@@ -46,6 +46,10 @@ src/index.js
 React al hacer un cambio y guardar refleja de un solo los cambios en el server
 
 ## Componentes
+ES MUY IMPORTANTE ESCRIBIR COMPONENTES CON LA PRIMERA LETRA MAYÚSCULA
+ESTO DIFERENCIA LOS COMPONENTES DE LAS FUNCIONES DE JS Y DE LAS 
+ETIQUETAS DE HTML
+
 En REACT todo es un componente, la navbar, post, sidebar, botones todo pueder ser 
 roto entre componente, son porciones de una interfaz más grande, los componentes
 son reutilizables (como los de vue y sus templates y componentes) Todo empieza
@@ -68,6 +72,97 @@ pediría javascript ya que utilizamos una sintaxis especial llamda JSX que es un
 combinación entre javascript y html, mas o menos. Permite que dentro de un archivo
 de javasript se retornen porciones de html y luego será convertido en Javascript puro
 
+## Condicionales ternearias
+variable ? valor_si_true : valor_si_false. es muy utilizado en react, por ejemplo:
+
+>    const name = "Gabo"
+
+>   const married = true
+
+>return < h1 > {married ? name + " está casado" : name + " no está casado 😎"}< /h1 >
+
+el emoji lo jalamos copiendo la imagen desde una página con unicode. Esto es posible
+para vscode ya que mezcla caracteres y lo interpresta como un emoticon
+
+## Recordando JSON
+Para poder mostrar un objeto debemos crear una string que sea ese objeto ya que 
+solo pasando el objeto no funcionará, también sirve para comunicarse con el backend
+
+function Greeting (){
+    const user = {
+        firstName: "ryan",
+        lastName: "godinez",
+    }
+    return < h1 >{JSON.stringify(user)}< /h1 >
+}
+
+> JSON.strinfigy(x) convierte las cosas en string
+> JSON.parse(x) regresa las cosas a su estado original
+
+Los elementos al ser ya strings puedo llamarlos y representarlos dentro de la interfaz
+
+return < div>
+    < h1>{user.firstName}</ h1>
+    < h3>{user.lastName}</ h3>
+    < h4>Está casado? {married.toString()}</ h4>
+</ div>
+
+Para mostar un booleano puedo usar el método .toString()
+
+## Fragment
+Para no caer en el uso excesivo de muchas etiquetas div puedo hacer uso de 
+los fragment, los fragment se crear solo haciendo lo siguiente
+<> ... </> son dos etiquetas vacías sin nombre donde dentro coloco 
+el contenido que quiero mostrar pues React siempre necesita tener un elemento padre
+Es un contendor vacío y no se converte en nada al final
+
+## Exportando e Imoprtando datos
+la función en otro archivo debería verse así : 
+
+export function Greeting (){
+    function add(x,y){
+        return x+y
+    }
+    return < h1 >{add(1,2)}< /h1 >
+}
+
+Notamos el export al inicio
+y el archivo index.js tendrá un import así:
+
+> import {Greeting} from "./Greeting"
+
+De esa manera jalamos un componente que está en otro archivo para
+poder mostrarlo desde el index.js. Para importar varios:
+
+> import {Greeting, UserCar} from "./Greeting"
+
+Para no exportar de manera indivisual podemos hacer lo siguiente
+
+function Product(){
+    return < div >
+        Producto
+    </ div >
+}
+
+export function Navbar(){
+    return < nav>
+        navigation
+    </ nav>
+}
+
+>export default Product
+
+Colocar la sentencia export default que jala todo el archivo
+Ahora en el index usamos lo siguiente:
+
+>import Product from "./Product"
+
+Y si también queremos el segundo componente que está llí listado
+que no lo estamos tomando ahora mismo podemos hacerlo así:
+
+>import Product, {Navbar} from "./Product"
+
+Deémde de la aplicación que se quiere usar y del desarrollador.
 
 # Getting Started with Create React App
 
