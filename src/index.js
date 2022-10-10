@@ -6,10 +6,10 @@
     y aplicaciones de escritorio hay que especificar que estaremos
     trabajando con su versión web, es decir el DOM
 */
-import React from "react"
-import ReactDOM from "react-dom/client"
-import {Greeting, UserCar} from "./Greeting"
-import Product, {Navbar} from "./Product"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Greeting, UserCar } from "./Greeting";
+import Product, { Navbar } from "./Product";
 /* 
     ya que react monta nuestra aplicación en la etiqueta con id root 
     en el index html de la carpeta public debemos seleccionar este elemento
@@ -21,7 +21,7 @@ import Product, {Navbar} from "./Product"
 
     Ahora tenémos una aplicación de react inicializada
 */
-const root = ReactDOM.createRoot(document.getElementById("root"))
+const root = ReactDOM.createRoot(document.getElementById("root"));
 /*
     para mostrar cosas dentro utilizado la función render y lo que 
     quiere son children que son elementos html
@@ -66,11 +66,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
     encapsule al resto, aplica también para el return de los componentes
 */
 
-root.render(<>
-    <Greeting title="hola este es un prop"/>
-    <Greeting title="hola react"/>
-    <Greeting title="hola webpage"/>
-    <UserCar></UserCar>
-    <Product></Product>
-    <Navbar></Navbar>
-</>)
+root.render(
+	<>
+		<UserCar
+			name="Ryan ray"
+			ammount={3000}
+			married={true}
+			points={[10, 22, 321]}
+			adress={{ street: "123 main street", city: "New York" }}
+            greed={function(){alert("Hello")}}
+		></UserCar>
+	</>
+);

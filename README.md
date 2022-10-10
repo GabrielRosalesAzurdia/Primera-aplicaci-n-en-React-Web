@@ -204,6 +204,28 @@ manera constante para su correcto funcionameinto
 
 En lo que estamos usando actualmente, create-react-app, no es necesario.
 
+## Prettier
+Extención de vs code para poder hacer código mucho más legible a primer vista
+comando:
+
+> shift + alt + f
+
+Para acceder a las configuraciones de comandos y shortcuts utilizamos 
+la tecla
+
+> f1
+
+Sugiero cambiar la configuración por defecto de prettier y darle check en
+"use tab to ident" así podrá identer con tab y no con espacios.
+
+También como otro consegjo para vs code si damos un click al final de una palabra
+que se repite muchas veces y precionamos
+
+> ctrl + D
+
+Se creará una instancia del cursor en cada una de esas palabras y solo precionando
+una vez la tecla borrar se eliminarán todas ellas.
+
 ## Props
 Ayuda a saber como poder cambiar datos internamente en un componente.
 Por ejempo sirve para poder hacer una lista y que los datos tengan continuidad
@@ -237,6 +259,33 @@ para obtener directamente el valor que quiero.
 
 >}
 
-Para pasar más de un parámetros:
+Para pasar más de un parámetros simplemente se los añadimos como más elementos
+de la etiqueta html:
 
-> 
+> < Greeting title="hola este es un prop" name="Joe"/>
+
+Y para recibirlo en el componente lo hago de esta manera:
+
+>  Greeting ({title, name})
+
+Y a los props se les puede colocar un valor por defecto para
+evitar errores con `undefined`
+
+>  Greeting ({title, name = "un nombre"})
+
+Dentro también podemos pasarle datos como un objeto solo debemos
+tener cuidado con la sintaxis ya que estaremos usando
+datos como estos: 
+
+>{{nombre:"name"}}
+
+Los props  también pueden ser funciones
+
+> greed={function(){alert("Hello")} }
+
+Y en el componente se pueden llamra e imprimir
+
+>console.log(greed)
+
+>greed()
+
