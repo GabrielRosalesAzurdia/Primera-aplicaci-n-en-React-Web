@@ -1,5 +1,9 @@
 # Aprendiendo React
 
+empezamos con el comando
+
+>npx create-react-app my-app
+
 La carpeta más importante será la de src donde estarán todos los archivos de código
 que estaremos utilizando
 
@@ -288,4 +292,68 @@ Y en el componente se pueden llamra e imprimir
 >console.log(greed)
 
 >greed()
+
+## Prop Types y Default Props
+
+Son útiles en casos donde la aplicación falla, por ejemplo cuando un componente
+recibe tipos de datos para los cuales no está preparado. Esto lo podemos
+solucionar con una librería externa que se instala corriendo el siguiente comando:
+
+>npm install --save prop-types
+
+Para importart PropTypes a un archivo donde tengamos los componentes colocamos:
+
+>import PropTypes from "prop-types"
+
+Y luego abajo del componente colocamos:
+
+>Button.propTypes = {
+
+>    text : PropTypes.string
+
+>}
+
+Tal que text es el nombre del parámetro que estamos usando y Button es el nombre
+del componente que estamos manejando, todo lo demás si se queda igual.
+
+Al ejecutar esto funcinará de igual manera, y al momento de pasar un prop
+incorrecto dará una advertencia de qué sucedió en la consola del navegador.
+
+En caso damos un prop vacío y no querémos que eso suceda podemos establer que 
+un prop es requerido ( en el código anterior ):
+
+>...
+>    text : PropTypes.string.isRequired
+>...
+
+Esto dará una advertencia en la consola anunciando el error.
+
+Ahora si nos da el string, o dato, que nosotros estamos pidiendo pero 
+está vacío ya queda en manos de nosotros el comprobarlo con código
+de Javascript. 
+
+Para establecer que un prop es opcional podemos darle un valor por defecto
+la primera manera es igual a como lo hicimos anteriormente: 
+
+> export function Button({text, name = "Usuario"}) {
+
+Siendo name un prop que es totalmente opcional y podemos darselo o no darselo,
+si se lo damos mostrará el valor que le dimos de lo contrario mostrará Usuario
+
+La segunda manera es dejando la parte de arriba a como estaba antes y como si name
+fuera un prop obligatorio: 
+
+> export function Button({text, name}) {
+
+Y abajo del componente colocar y de los proptypes colocar:
+
+>Button.defaultProps = {
+
+>    name : "some user"
+
+>}
+
+Ambas manera funcionan, no altera en nada cual utilicemos.
+
+## Estilos de componentes
 

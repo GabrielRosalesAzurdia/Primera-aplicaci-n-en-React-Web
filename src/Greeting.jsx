@@ -9,9 +9,8 @@ export function Greeting({ title, name = "user" }) {
 	);
 }
 
-export function UserCar({name, ammount, married, adress, greed}) {
-    console.log(greed)
-    greed()
+export function UserCar({ name, ammount, married, adress, greed }) {
+	greed();
 	return (
 		<div>
 			<h1>{name}</h1>
