@@ -67,9 +67,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 */
 
 root.render(<>
-    <Greeting/>
-    <Greeting/>
-    <Greeting/>
+    <Greeting title="hola este es un prop"/>
+    <Greeting title="hola react"/>
+    <Greeting title="hola webpage"/>
     <UserCar></UserCar>
     <Product></Product>
     <Navbar></Navbar>
