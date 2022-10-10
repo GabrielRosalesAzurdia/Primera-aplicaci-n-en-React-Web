@@ -164,6 +164,29 @@ que no lo estamos tomando ahora mismo podemos hacerlo así:
 
 Deémde de la aplicación que se quiere usar y del desarrollador.
 
+## Extensión .jsx
+La extensión .jsx nos dicta que lo que está dentro del archivo son
+componentes que estarán devolviendo html y no funciones de Javascript 
+convencionales. No es un requisito.
+Es más una ayuda para el desarrollador ya que react sabe diferenciar entre
+funcioens que retornan un código de html y funciones normales de Javascript
+
+Herramientas como `VIT`si requieren que estemos utilizando esta sintaxis de
+manera constante para su correcto funcionameinto
+
+En lo que estamos usando actualmente, create-react-app, no es necesario.
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
