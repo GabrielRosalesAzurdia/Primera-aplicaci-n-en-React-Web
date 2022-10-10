@@ -192,11 +192,11 @@ Luego en la función nos tocará tener un parámetro, no debe ser el mismo nombr
 del que pasamo, que será un dicionario, en este diccionario accedemos
 a las propiedades por nomre ahora si según se lo pasamos acá en la etiqueta
 
->    export function Greeting (props){
+>export function Greeting (props){
 
->        return < h1 > {props.title} </ h1 >
+>    return < h1 > {props.title} </ h1 >
 
->    }
+>}
 
 También como ya se que voy a estar recibiendo un objeto lo puedo estructurar
 para obtener directamente el valor que quiero.
