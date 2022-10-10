@@ -202,10 +202,10 @@ También como ya se que voy a estar recibiendo un objeto lo puedo estructurar
 para obtener directamente el valor que quiero.
 
 >export function Greeting ({title}){
-    
+
 >    console.log(title)
 
->    return <h1> {title} </h1>
+>    return < h1> {title} </ h1>
 
 >}
 
