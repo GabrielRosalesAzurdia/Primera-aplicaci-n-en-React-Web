@@ -21,6 +21,7 @@ El package.json nos sirve para determinar las bibliotecas y dependencias que usa
 en nuestra aplicación REACT.
 
 >npm start lanza el proyecto
+
 >npm run build crea una versión de producción del proyecto
 
 En los archivos hace falta una carpeta, esta es de las más importantes y es la capeta
@@ -54,11 +55,12 @@ sección anterior
 A la hora de crear un componente se habla directamente de funciones
 
 En React es posible hacer esto:
+
 function Greeting (){
-    return <div>
-        <h1>Este es un componente</h1>
-        <p>este es texto de relleno para el componente</p>
-    </div>
+    return < div >
+        < h1 >Este es un componente< /h1 >
+        < p >este es texto de relleno para el componente< /p >
+    < /div >
 }
 
 y entregar datos en etiquetas html puras sin comillas como normalmente nos lo 
