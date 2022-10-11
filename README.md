@@ -389,13 +389,13 @@ guardar los datos de estilo css en una variable:
 
 >	return (
 
->	<div style={cardStyles}>
+>	< div style={cardStyles} >
 
->	<h1 style={{ fontWeight: "lighter" }}>Mi primer tarea</h1>
+>	< h1 style={{ fontWeight: "lighter" }}>Mi primer tarea< /h1>
 
->	<p>Tarea realizada</p>
+>	< p>Tarea realizada< /p>
 
->	</div>
+>	< /div>
 
 >	);
 
@@ -418,13 +418,13 @@ Y en el componente quedaría de la siguiente manera:
 
 >	return (
 
->	<div className="card">
+>	< div className="card">
 
->	<h1>Mi primer tarea</h1>
+>	< h1>Mi primer tarea< /h1>
 
->	<p>Tarea realizada</p>
+>	< p>Tarea realizada< /p>
 
->	</div>
+>	< /div>
 
 >	);
 
@@ -474,3 +474,30 @@ de las clases estén bien escritos.
 También podemos estar utilizando frameworks de css BOOTSTRAP cof cof o material
 
 ## Tipos de componentes
+
+Hay otra forma de crear componentes que no son funciones y esto es usando clases, que
+fue la primera forma en la que React creaba sus componentes, ahora ya no es tan usada:
+
+>import { Component } from "react";
+
+>export class Saludar extends Component {
+
+>	// Debe tener un método que tire su contenido de jsx
+
+>	render() {
+
+>	return < h1>Hello World!< /h1>;
+
+>	}
+
+>}
+
+Y en el index.js lo tomamos y lo mostramos como cualquier comopnente:
+
+> import { Saludar } from "./Saludar";
+
+> < Saludar />
+
+REACT ESTÁ BASADO EN UN PARADIGMA FUNCIONAL
+
+## Event Handlers
