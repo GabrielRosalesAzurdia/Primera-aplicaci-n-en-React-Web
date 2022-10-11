@@ -1,5 +1,7 @@
 # Aprendiendo React
 
+Viendo tutorial de fazt - https://youtu.be/rLoWMU4L_qE
+
 empezamos con el comando
 
 >npx create-react-app my-app
@@ -357,3 +359,118 @@ Ambas manera funcionan, no altera en nada cual utilicemos.
 
 ## Estilos de componentes
 
+Los más sencillos de agregar son los estilos en linea, esos que 
+se colocan directamente sobre la etiqueta con style="", pero esta no es la mnanera
+que espera React de recibir los estilos, el espera código de Javascript así que
+debe ir el llaves así:
+
+> style={[propiedad:valor]}
+
+y dentro un diccionario donde irá varias propiedades con nombre y valor según las reglas 
+de css
+
+> < div style={{background:"#202020",color:"#fff", padding:"20px"}}>
+
+Cabe resaltar que con 
+
+> ctrl + space
+
+Sobre el set de llaves para empezar a escribir código visual studio nos dará 
+todas las propiedades de css que podemos colocar ayudandonos si nuestra memoria
+nos falla. Esto también se puede hacer sobre el espacio para colocar los valores.
+
+Ya que en sí estamos usando código de Javascript para escribir estas propiedades
+de css podemos aplicar también todos los conceptos de Javascript como
+guardar los datos de estilo css en una variable:
+
+>export function TaskCard() {
+
+>	const cardStyles = { background: "#202020", color: "#fff", padding: "20px" };
+
+>	return (
+
+>	<div style={cardStyles}>
+
+>	<h1 style={{ fontWeight: "lighter" }}>Mi primer tarea</h1>
+
+>	<p>Tarea realizada</p>
+
+>	</div>
+
+>	);
+
+>}
+
+También lo podemos hacer creando un archivo de css y creando clases en él. Para el nombre
+de los archivos no hay reglas de mayúsculas o que se deban de llamar igual pero siempre
+es buena práctica que compartan nombre con la entidad principal que los estará utilizando.
+Este archivo se crea dentro del folder src y se escrbie de manera normal en css.
+
+Para importar este archivo hacemos lo siguiente (ya que ahora html no es quien carga
+el css sino que es webpack, quien se encarga de cargar fotos y etilos al trabajar
+con javascript, lo importamos en el componente que lo usará):
+
+>import "./task.css"
+
+Y en el componente quedaría de la siguiente manera:
+
+>export function TaskCard() {
+
+>	return (
+
+>	<div className="card">
+
+>	<h1>Mi primer tarea</h1>
+
+>	<p>Tarea realizada</p>
+
+>	</div>
+
+>	);
+
+>}
+
+Cabe resaltar que no utilizamos class="" en react sino que className="".
+
+Se pueden utilizar tanto estilos en línea o clases para colocar css.
+
+Sumado a todo ello podemos condicionar los estilos, es decir cambiarlos según alguna
+variable. Esto se hace con una condicional ternearia y se hace en el style:
+
+> < span style={ready ? { background: "green" } : { background: "red" } }>
+
+> 	{ready ? "tarea realiza" : "taea pendiente"}
+
+> < /span>
+
+Según el valor de ready si es falso o verdadero va a cambiar el color de fondo
+del span y el contenido del span.
+
+Esto también se puede aplicar para las clases:
+
+> < span className={ready?"bg-green":"bg-red"}>
+
+>    {ready ? "tarea realiza" : "taea pendiente"}
+
+> < /span>
+
+También cambia la clase que se usa y el contenido de la etiqueta siempre teniendo
+en cuenta que estemos importando un archivo que tenga esas clases y que los nombres
+de las clases estén bien escritos.
+
+>.bg-red {
+
+>	background-color: red;
+
+>}
+
+
+>.bg-green {
+
+>	background-color: green;
+
+>}
+
+También podemos estar utilizando frameworks de css BOOTSTRAP cof cof o material
+
+## Tipos de componentes

@@ -11,6 +11,7 @@ import ReactDOM from "react-dom/client";
 import { Greeting, UserCar } from "./Greeting";
 import Product, { Navbar } from "./Product";
 import { Button } from "./Button";
+import { TaskCard } from "./Task";
 /* 
     ya que react monta nuestra aplicación en la etiqueta con id root 
     en el index html de la carpeta public debemos seleccionar este elemento
@@ -79,8 +80,9 @@ root.render(
 				console.log("Hello desde el user card");
 			}}
 		></UserCar> */}
-		<Button text="mi boton 1" />
+		{/* <Button text="mi boton 1" />
         <Button text="mi boton 2" />
-		<Button text="" />
+		<Button text="" /> */}
+		<TaskCard ready={false}/>
 	</>
 );
