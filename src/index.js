@@ -74,5 +74,15 @@ root.render(
 	<>
 		<TaskCard ready={false} />
 		<Saludar />
+		<Button text="saludar" />
+		<form
+			onSubmit={(e) => {
+				e.preventDefault();
+				console.log("enviando datos del form");
+			}}
+		>
+			<h1>Forlulario Registro de Usuario</h1>
+			<button>send</button>
+		</form>
 	</>
 );

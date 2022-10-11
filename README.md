@@ -1,5 +1,7 @@
 # Aprendiendo React
 
+GR - 2022
+
 Viendo tutorial de fazt - https://youtu.be/rLoWMU4L_qE
 
 empezamos con el comando
@@ -501,3 +503,93 @@ Y en el index.js lo tomamos y lo mostramos como cualquier comopnente:
 REACT ESTÁ BASADO EN UN PARADIGMA FUNCIONAL
 
 ## Event Handlers
+
+Nos sirven para actuar cuando algo ocurre en la página por ejemplo cuando alguien hace
+un click ejecuta una lógica.
+
+La manera más simple de colocarlos es directamente en la etiqueta del objeto 
+que querramos estar atentos, por ejemplo:
+
+>< button
+
+>	onClick={function () {
+
+>	console.log("hola mundo!");
+
+>	} }
+
+>	>
+
+>< /button>
+
+En su mayoría de veces voy a estar usando funciones anúnimas. Estas funciones ofrecen
+información por medio de un objeto de javascript, esto lo recibimos en la función
+
+> function(e){}
+
+Normalmente llamamos a ese parámetro event o e o info. También podemos jalar
+la info del input directamente en el render o en un componente recordemos que 
+esto no altera:
+
+> < input
+
+>    id="hola"
+
+>	onChange={function (e) {
+
+>	console.log(e.target.value);
+
+>	} }
+
+> ">"< /input>
+
+Para las funcioens anónimas podemos utilizarlas de la manera larga, que son las 
+anteriores o de la manera shida que son las arrow function:
+
+> (parametros) => {codigo}
+
+Podemos también no usar funciones anónimas sino funciones normales fuera
+del render y de las etiquetas. Fuera del render y encima del root:
+
+>const handleChange = (e) => {
+
+>	console.log(e.target.value);
+
+>};
+
+y para llamarla ya solo hacemos lo siguiente:
+
+> onChange={handleChange}
+
+El nombre es apropósito pues para siertas funciones y sus funcionalidades le damos
+el nombre del evento que van a estar escuchando, en este caso como está escuchando
+al evento onChange utilizamos handleChange, si fuera un onClick utilizamos
+handleClick, etc. Esta forma con constante y función nombrada es mucho más común que
+las arrow directas en las etiquetas.
+
+Precionando `ctrl + space` en el input podemos ver las opciones que tenemos para todos
+los eventos on... normalmente los investigamos conforme los vamos necesitando.
+
+> onClick cuando damos click
+
+> conDrag cuando se arrastra
+
+> onBlur cuando se deselecciona
+
+> onCopy cuando se copia
+
+> onDoubleClick cuando damos doble click
+
+> onSubmit cuando se envía un forlulario, normalmente en submit pero aquí no
+
+Recuerda que submit refresca la página porque aplica métodos http, ya que es su 
+comportamiento por defecto para enviar datos al backend, en React no lo envíamos
+así, primero tomamos los datos del formulario y luego decidimos cuando enviarlos,
+por ejemplo si primero querémos mostrar un ícono de carga o algo así.
+
+Para prevenir la refrescada añadimos esto como primera línea de la función del
+formulario, teniendo en cuenta que ya en el parámetro esté e para la info de evento:
+
+> e.preventDefault();
+
+## fetch() API
