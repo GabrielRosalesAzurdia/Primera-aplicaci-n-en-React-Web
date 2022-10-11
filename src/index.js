@@ -8,11 +8,6 @@
 */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Greeting, UserCar } from "./Greeting";
-import Product, { Navbar } from "./Product";
-import { Button } from "./Button";
-import { TaskCard } from "./Task";
-import { Saludar } from "./Saludar";
 import { Posts } from "./Posts";
 
 /* 

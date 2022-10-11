@@ -1,6 +1,9 @@
 // Usando una función flecha para crear un componente
 // también estaré utilizando fech para tomar información
 
+// Jalamos también la biblioteca de íconos
+import { VscBug } from "react-icons/vsc";
+
 export const Posts = () => {
 	return (
 		<button
@@ -11,7 +14,8 @@ export const Posts = () => {
 					.catch((error) => console.error(error));
 			}}
 		>
-			Trear datos
+			<VscBug />
+			Traer datos
 		</button>
 	);
 };

@@ -640,3 +640,27 @@ En caso ocurra un error al tomar la url podemos implementar un catch
 Normalmente esto lo hacemos con promesas, asyc y await
 
 ## Modulos de terceros
+
+Modulos creados por otros programadores, módulos que ya están creados con una 
+funcionalidad en específico. En este ejemplo verémos como tenér iconos en la alpicacion
+de una manera bastante sencilla. Usremos React icons: https://react-icons.github.io/react-icons/. Para instalarlo:
+
+> npm install react-icons
+
+Para importar según la terminación de la biblioteca usremos unos iconos u otros
+
+>import { nombre-del-icono } from "react-icons/io"
+
+Para íconos de ionic , para iconos de vs code sería vsc
+
+> import { VscBug } from "react-icons/vsc"
+
+Y para colocarlos: 
+
+> < VscBug/>
+
+Esto también funciona con mejores formas de hace peticiones, animaciones, formularios
+ventanas emergentes o modales. Por ejemplo la biblioteca material ui que tiene ya 
+varios componentes hechos como calendarios o tarjetas
+
+## Arrays
