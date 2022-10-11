@@ -13,6 +13,7 @@ import Product, { Navbar } from "./Product";
 import { Button } from "./Button";
 import { TaskCard } from "./Task";
 import { Saludar } from "./Saludar";
+import { Posts } from "./Posts";
 
 /* 
     ya que react monta nuestra aplicación en la etiqueta con id root 
@@ -72,17 +73,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
 	<>
-		<TaskCard ready={false} />
-		<Saludar />
-		<Button text="saludar" />
-		<form
-			onSubmit={(e) => {
-				e.preventDefault();
-				console.log("enviando datos del form");
-			}}
-		>
-			<h1>Forlulario Registro de Usuario</h1>
-			<button>send</button>
-		</form>
+		<Posts />
 	</>
 );

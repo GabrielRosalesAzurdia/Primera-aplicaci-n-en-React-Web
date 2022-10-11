@@ -593,3 +593,50 @@ formulario, teniendo en cuenta que ya en el parámetro esté e para la info de e
 > e.preventDefault();
 
 ## fetch() API
+
+De las más utilizadas en los navegadores, nos ayuda a traer datos.
+
+NOTA
+También podemos crear componentes utilizando una función flecha:
+
+>export const Post = () => {
+
+>    codigo
+
+>}
+
+Al parecer es parecido a Axios.js en cuestión de que permite hacer una solicitud
+de información a un backend, en lo personal si prefiero axios por lo robusto
+que es pero probaremos un poco de fech acá.
+
+Link que usaremos con una api de ejemplo ya publicada en la web:
+https://jsonplaceholder.typicode.com/posts
+
+Las apis con las que cuenta el navegador son :
+
+> localStorage
+
+> SesionStorage
+
+> Canvas
+
+> Notificaciones
+
+> fetch
+
+Ejemplo utilizando fetch:
+
+>fetch("https://jsonplaceholder.typicode.com/posts")
+
+>   .then((response) => response.json())
+
+>   .then((data) => console.log(data));
+
+Así de simple tomamos datos desde un backend para poder utilzarlos acá en react.
+En caso ocurra un error al tomar la url podemos implementar un catch
+
+>   .catch((error) => console.error(error));
+
+Normalmente esto lo hacemos con promesas, asyc y await
+
+## Modulos de terceros
