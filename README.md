@@ -834,3 +834,55 @@ navegador.
 Aparece cuando abramos otra vez la página y sus opciones están dandole click
 en la flechita para más opcoines dentro de las opciones de desarrollo 
 del navegador, donde está la consola, elementos, etc.
+
+## Use Effect
+
+También es bastante usado, sirve para cuando tengamos cambios en la interfaz,
+se ejecuta cada vez que algo cambie el valor de otra cosa.
+
+Lo importamos así :
+
+>import { useEffect } from "react";
+
+y su estructura es así: 
+
+>useEffect(function () {});
+
+Esperando como parámetro un función que será la accción que tomará. Esta función se 
+ejecuta cada vez que haya un render, es decir cuando todo el componente se vuelva
+a pintar. Al ejecutar algo revisa si hay cambios, si los hay corre un render.
+
+En palabras simples, useEffect se ejecuta siempre que hay un cambio en el componente.
+
+Aveces solo lo querémos usar una vez, como cuando se crea el componente, para hacer
+eso utilizamos la siguiente sintaxis:
+
+>useEffect(function () {
+
+>console.log("render")
+
+>}, []);
+
+Ese arry vació al final hará que solo se imprima en la consola una vez render al inicio
+de la vida del componente, todas las demás veces que hayan cambios este useEffect 
+no hará nada. Aparte también podemos usar una función flecha.
+
+También en el caso de tener 2 useState podemos decirle a la función useEffect que se
+concentre en ejecutarse cuando cambie una en especifico:
+
+>useEffect(function () {
+
+>console.log("render")
+
+>}, [counter]);
+
+Esto funciona tal que counter es una variable con us useState y useEffect se ejecuta cada
+que counter cambia.
+
+Resumiendo, sin el arreglo hace que se ejecute siempre que hay algún cambio, con el 
+arreglo vacío se ejecuta solo al crear el componente y con un elemnento en el arreglo 
+se encargará de vigilar ese elemento y ejecutarse cuando cambie.
+
+TUTORIAL TERMINADO !      
+
+Me tardé 5 días.

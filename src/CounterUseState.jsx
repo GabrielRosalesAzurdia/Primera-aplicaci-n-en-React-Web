@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 // Este componente suma, resta y reinicia el valor de una variable con botones
-export function Counter() {
+export function CounterUseState() {
 	const [counter, setCounter] = useState(10);
 	return (
 		<div>
@@ -27,7 +27,7 @@ export function Counter() {
 	);
 }
 
-export function InputConHook() {
+export function InputConHookUseState() {
     // Para ver como cambia mensaje ir a las opciones de desarrollador de React
     // Y ver el valor de hook y state de esta variable
 	const [mensaje, setMensaje] = useState("");
