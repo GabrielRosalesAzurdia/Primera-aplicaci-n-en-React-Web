@@ -664,3 +664,65 @@ ventanas emergentes o modales. Por ejemplo la biblioteca material ui que tiene y
 varios componentes hechos como calendarios o tarjetas
 
 ## Arrays
+
+Los arrays los craemos como arrays normales de Javascript, usualemnte tendrán objetos
+dentro. Una biblioteca que puede ser útil para imágenes de pruebas es robohash
+https://robohash.org/ y podemos usar enlaces como:
+
+> https://robohash.org/user3
+
+Usualmente recorremos los objetos que están dentro de una array para irlos mostrando.
+
+En react no usamos bucles for sino que usamos métodos de arreglos. como .map .forEach
+.fill etc. Ejemplo con map:
+
+> names = ["Jose", "Juaquin", "Miguel"]
+
+> names.map((name)=>return "hola " + name)
+
+> resultado: ["hola Jose", "hola Juaquin", "hola Miguel"]
+
+La diferencia de map con el for es que no modifica el array original, devuelve un nuevo
+array. Por ejempo si tuvieramos un arreglo de usuarios en el render podemos hacer
+lo siguiente:
+
+>{user.map((user,index) => {
+
+>return < h1 key={index} >{user.name}</ h1>;
+
+>})}
+
+Importante notar la key como prop de la etiqueta que se está devolviendo, la key debe
+ser única en este caso el segundo parámetro que me devuelve map es el índice que está 
+recorriendo así que podemos usarlo como key. EL QUE DEBE TENER EL KEY ES EL ELEMENTO
+PADRE, NO CUALQUIER ELEMENTO, EL ELEMENTO QUE CONTIENE AL RESTO. Ejemplo:
+
+>{user.map((user, index) => {
+
+>	return (
+
+>	< div key={index}>
+
+>	< h1>user.name</ h1>
+
+>   < img src={user.image}/>
+
+>	< /div>
+
+>	);
+
+>})}
+
+Muchos de los métodos a utilizar son:
+
+> map para recorer
+
+> filter para quitar elementos de un arreglo generado
+
+> find para encontrar un elemento
+
+> reduce para reducir
+
+> sort para ordenar
+
+## Hooks de React
