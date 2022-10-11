@@ -8,6 +8,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Counter, InputConHook} from "./Counter";
 /* 
     ya que react monta nuestra aplicación en la etiqueta con id root 
     en el index html de la carpeta public debemos seleccionar este elemento
@@ -63,33 +64,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
     Se escribe con un div porque siempre debe de haber un elemento que
     encapsule al resto, aplica también para el return de los componentes
 */
-const user = [
-	{
-		id: 1,
-		name: "Ryan Ry",
-		image: "https://robohash.org/user1",
-	},
-	{
-		id: 2,
-		name: "Joe",
-		image: "https://robohash.org/user2",
-	},
-	{
-		id: 3,
-		name: "Jaime",
-		image: "https://robohash.org/user3",
-	},
-];
-
 root.render(
 	<>
-		{user.map((user, index) => {
-			return (
-				<div key={index}>
-					<h1>user.name</h1>
-					<img src={user.image} />
-				</div>
-			);
-		})}
+		<Counter></Counter>
+        <InputConHook/>
 	</>
 );

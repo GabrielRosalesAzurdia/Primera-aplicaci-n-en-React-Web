@@ -726,3 +726,111 @@ Muchos de los métodos a utilizar son:
 > sort para ordenar
 
 ## Hooks de React
+
+Funciones que añade React para funcionalidad extra de la app, 
+Los hooks nos ayudan a guardar datos y reaccionar ante cambios que hay
+en el ciclo de vida de los componentes ya que estos hooks se enganchan a
+la funcionalidad del ciclo de vidad el componente. Los hooks básicos son:
+
+> useState
+
+Este se usa de la siguiente manera:
+
+> const [valor, function] = useState(valorinicial)
+
+Se crean dos constantes donde la primera es donde estarémos guardado un valor
+y la segunda una función que declararémos despúes y que servirá para alterar
+el valor de la primera. Todo esto con useState que se le asiga el valor inicial
+
+> useEffect
+
+Se ejecuta cuando ciertas cosas han cambiado y puede interactuar directamente con
+el DOM 
+
+>useEffect(() => {
+
+>  const subscription = props.source.subscribe();
+
+>  return () => {
+
+>  subscription.unsubscribe();
+
+>  };
+
+>});
+
+Y tenémos también como el último miembro de los hoooks básicos a usecontext:
+
+> useContext
+
+Este si no lo entendí solo con documentación jajajja.
+
+## useState
+
+El hook más utilizado, nor sirve para alterar un valor con cada interacción que puede
+ser despetada por un efecto onx
+
+Se importa así:
+
+>import {useState} from "react";
+
+Lo primero que tenémos que tener en mente es que al usar useState nos va a devolver
+un array con dos elementos, el elemento que se altera y una función. Es sintaxis
+de Javascript el podertomar los elementos de la siguiente manera:
+
+> let names = [1,2,3]
+
+> const [num1, num2] = names
+
+> num1 es 1
+
+> num2 es 2
+
+Es importatnte notar que la segunda variable normalmente es la palabra `set` seguida
+del nombre de la pirmera variable, entonces las colocamos:
+
+> const [counter, setCounter] = useState(0)
+
+Ese 0 que le pasamos a useState es porque ese será el valor inicial de counter,
+podemos cambiarlo por string, objet o arrays lo que nosotros querramos. Si nosotros
+no colocamos nada entonces el valor de la primera variable es `undefined`
+
+Y luego en el evento podemos colocarlo de la siguiente manera:
+
+> < h1>Counter: {counter}</h1>
+
+> < button
+
+> 	onClick={() => {
+
+> 	setCounter(() => counter + 10);
+
+> 	} }
+
+> ">" 
+
+> Sumar
+
+> < /button>
+
+Lo que está en los parentesis del setCounter puede ser un valor para que al 
+accionarse el evento sea ese el único cambio o una serie de operaciones
+que hagan que ese valor pueda ser distinto, poe eso le podemos pasar un 
+valor:
+
+> setCounter(20)
+
+O un a oepraciones por medio de una función anónima como lo hicimos arriba.
+
+Esto ayuda para que React no recargue toda la página pero solo el elemento que 
+le estamos dictando por medio de la función.
+
+### React Development tools
+
+Dandole click al mensaje que aparece en la consola nos enviará a un extensión
+para navegador donde podrémos descargar la herramienta de desarrollo para el 
+navegador.
+
+Aparece cuando abramos otra vez la página y sus opciones están dandole click
+en la flechita para más opcoines dentro de las opciones de desarrollo 
+del navegador, donde está la consola, elementos, etc.
